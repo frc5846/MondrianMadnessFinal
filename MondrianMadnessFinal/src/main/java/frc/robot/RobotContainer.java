@@ -87,7 +87,7 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     return m_chooser.getSelected();
   }
-
+  
   /**
    * Use this to pass the teleop command to the main {@link Robot} class.
    *
@@ -95,6 +95,6 @@ public class RobotContainer {
    */
   public Command getArcadeDriveCommand() {
     return new ArcadeDrive(
-        m_drivetrain, () -> -m_controller.getRawAxis(1), () -> m_controller.getRawAxis(2));
+        m_drivetrain, () -> -m_controller.getRawAxis(1)/1.3, () -> m_controller.getRawAxis(2)/1.5);
   }
 }
